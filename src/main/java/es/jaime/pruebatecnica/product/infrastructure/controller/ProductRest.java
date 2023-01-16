@@ -19,6 +19,7 @@ public class ProductRest {
 
     @GetMapping("stock")
     public ResponseEntity<ProductResponse> filterAvailableProducts() {
-        return new ResponseEntity<>(showAvailable.showAvailableProducts(), HttpStatus.OK);
+        var availableProducts = showAvailable.showAvailableProducts();
+        return !availableProducts.getId().isEmpty() ? new ResponseEntity<>(availableProducts, HttpStatus.OK) : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 }
