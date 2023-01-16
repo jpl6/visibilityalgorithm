@@ -1,0 +1,16 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: prueba-tecnica
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/mydb
+    username: postgres
+    password: postgres
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  flyway:
+    default-schema: mydb
+
