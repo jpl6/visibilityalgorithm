@@ -17,11 +17,11 @@ public class ProductPostgreSqlAdapter implements ProductRepository {
 
     @Override
     public List<Product> findAllProducts() {
-        return productJPA.findAll().stream()
-                .map(product -> Product.builder()
-                                .id(product.getId())
-                                .sequence(product.getSequence())
-                                .build())
-                .toList();
+        return productJPA.findAll();
+    }
+
+    @Override
+    public void save(Product product) {
+        productJPA.save(product);
     }
 }
