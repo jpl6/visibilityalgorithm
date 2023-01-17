@@ -16,6 +16,13 @@ public class SizeServiceImpl implements SizeService {
 
     @Override
     public List<Size> findAllByProductId(long productId) {
-        return sizeRepository.findAllByProductId(productId);
+        return sizeRepository.findAllByProductId(productId).stream()
+                .map(size -> Size.builder()
+                        .id(size.getId())
+                        .productId(size.getProductId())
+                        .backSoon(size.isBacksoon())
+                        .special(size.isSpecial())
+                        .build())
+                .toList();
     }
 }

@@ -1,6 +1,6 @@
 package es.jaime.pruebatecnica.product.infrastructure.repository;
 
-import es.jaime.pruebatecnica.product.domain.dto.Product;
+import es.jaime.pruebatecnica.product.domain.entity.Product;
 import es.jaime.pruebatecnica.product.domain.repository.ProductRepository;
 import es.jaime.pruebatecnica.product.infrastructure.repository.jpa.ProductJPA;
 import org.springframework.stereotype.Component;

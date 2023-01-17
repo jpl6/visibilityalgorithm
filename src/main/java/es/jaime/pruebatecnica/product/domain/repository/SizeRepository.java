@@ -1,6 +1,6 @@
 package es.jaime.pruebatecnica.product.domain.repository;
 
-import es.jaime.pruebatecnica.product.domain.dto.Size;
+import es.jaime.pruebatecnica.product.domain.entity.Size;
 
 import java.util.List;
 

@@ -16,6 +16,6 @@ public class StockServiceImpl implements StockService {
 
     @Override
     public Optional<Stock> findBySizeId(long sizeId) {
-        return stockRepository.findBySizeId(sizeId);
+        return stockRepository.findBySizeId(sizeId).map(stock -> Stock.builder().sizeId(stock.getSizeId()).quantity(stock.getQuantity()).build());
     }
 }

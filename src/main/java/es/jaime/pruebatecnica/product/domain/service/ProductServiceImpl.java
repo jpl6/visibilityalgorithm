@@ -21,7 +21,12 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> findAllProducts() {
-        return productRepository.findAllProducts();
+        return productRepository.findAllProducts().stream()
+                .map(product -> Product.builder()
+                        .id(product.getId())
+                        .sequence(product.getSequence())
+                        .build())
+                .toList();
     }
 
     @Override
