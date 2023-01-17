@@ -21,8 +21,4 @@ public class SizePostgreSqlAdapter implements SizeRepository {
         return sizeJPA.findAllByProductId(productId);
     }
 
-    @Override
-    public void save(Size size) {
-        sizeJPA.save(size);
-    }
 }

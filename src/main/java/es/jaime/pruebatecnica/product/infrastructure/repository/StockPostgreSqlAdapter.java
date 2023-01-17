@@ -21,8 +21,4 @@ public class StockPostgreSqlAdapter implements StockRepository {
         return stockJPA.findById(sizeId);
     }
 
-    @Override
-    public void save(Stock stock) {
-        stockJPA.save(stock);
-    }
 }
